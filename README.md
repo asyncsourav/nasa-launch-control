@@ -2,15 +2,15 @@
 
 
 
-# 🚀 NASA Mission Control
+# NASA Mission Control
 
 A full-stack web application for managing interstellar space mission launches. Built with Node.js, Express, MongoDB, and React.
 
-## 📋 Overview
+## Overview
 
 NASA Mission Control allows users to schedule, track, and manage space launches to habitable exoplanets. The application processes real Kepler mission data to identify habitable planets and provides an intuitive interface for mission planning.
 
-## ✨ Features
+## Features
 
 ### Backend
 - RESTful API with Express.js
@@ -34,7 +34,7 @@ NASA Mission Control allows users to schedule, track, and manage space launches 
 **Backend:** Node.js, Express.js, MongoDB, Mongoose, csv-parse, cors  
 **Frontend:** React 17, React Router, Arwes UI, Custom Hooks
 
-## 📁 Project Structure
+## roject Structure
 
 ```
 Part_09_NASA_Project/
@@ -67,7 +67,7 @@ Part_09_NASA_Project/
 └── package.json                # Root package config
 ```
 
-## 🏗 Architecture
+## Architecture
 
 ```
 ┌─────────────────┐
@@ -89,7 +89,7 @@ Part_09_NASA_Project/
 
 The application follows MVC architecture with clear separation of concerns between models, controllers, and routes.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v14+ recommended)
@@ -132,7 +132,7 @@ This installs dependencies for both frontend and backend automatically.
    REACT_APP_API_URL=http://localhost:8000
    ```
 
-   📖 **For detailed setup instructions, see [ENV_SETUP.md](./ENV_SETUP.md)**
+   **For detailed setup instructions, see [ENV_SETUP.md](./ENV_SETUP.md)**
 
 4. **Start the application**
 
@@ -154,7 +154,7 @@ npm run server
 npm run client
 ```
 
-## 📡 API Endpoints
+## PI Endpoints
 
 ### Planets
 - `GET /planets` - Get all habitable planets
@@ -174,7 +174,7 @@ npm run client
 
 See [server/README.md](./server/README.md) for detailed API documentation.
 
-## 🔬 Habitable Planet Criteria
+## Habitable Planet Criteria
 
 The application filters planets based on scientific criteria:
 
@@ -184,131 +184,11 @@ The application filters planets based on scientific criteria:
 
 These criteria ensure only potentially habitable planets are available for mission planning.
 
-## 📊 Database Schema
-
-### Planet
-```javascript
-{
-  keplerName: String (required, unique)
-}
-```
-
-### Launch
-```javascript
-{
-  flightNumber: Number (required, unique, auto-incremented),
-  launchDate: Date (required),
-  mission: String (required),
-  rocket: String (required),
-  target: String (required),
-  customers: [String] (default: ["Zero to Mastery", "NASA"]),
-  upcoming: Boolean (default: true),
-  success: Boolean (default: true)
-}
-```
-
-## 💻 Development
-
-### Available Scripts
-
-```bash
-# Install all dependencies
-npm install
-
-# Development - run both servers
-npm run watch
-
-# Backend only
-npm run server
-
-# Frontend only
-npm run client
-
-# Production build
-npm run deploy
-```
-
-### Development Workflow
-
-1. **Backend Development**
-   - Files auto-reload with nodemon
-   - MongoDB connection is persistent
-   - CSV data loads only on first run
-
-2. **Frontend Development**
-   - Hot module replacement enabled
-   - Changes reflect immediately
-   - API calls to `localhost:8000`
-
-## 🚢 Deployment
-
-### Production Build
-
-1. **Build the frontend:**
-```bash
-npm run deploy
-```
-
-2. **Start the server:**
-```bash
-cd server
-npm start
-```
-
-The server will serve the built React app from `server/public`.
-
-### Environment Variables
-
-This project uses environment variables for configuration. See [ENV_SETUP.md](./ENV_SETUP.md) for detailed setup instructions.
-
-**Required for Server:**
-- `MONGO_URL` - MongoDB connection string (required)
-
-**Optional for Server:**
-- `PORT` - Server port (default: 8000)
-- `NODE_ENV` - Environment mode (default: development)
-- `CLIENT_URL` - Frontend URL for CORS (default: http://localhost:3000)
-
-**Optional for Client:**
-- `REACT_APP_API_URL` - Backend API URL (default: http://localhost:8000)
-
-⚠️ **Never commit `.env` files to Git!** They contain sensitive information.
-
-## 🎓 Key Highlights
-
-- **Production-Ready Architecture** - Clean MVC pattern with separation of concerns
-- **Database Persistence** - MongoDB integration with optimized queries
-- **Modern React Patterns** - Custom hooks, memoization, optimized re-renders
-- **Comprehensive Error Handling** - Error handling at all layers
-- **Scalable Structure** - Ready for future enhancements
-- **Real Data Processing** - CSV parsing and filtering of actual NASA Kepler data
-
-## 🔮 Future Enhancements
-
-Potential improvements:
-- User authentication and authorization
-- Pagination for large datasets
-- Search and filter functionality
-- Real-time updates with WebSockets
-- Unit and integration tests
-- Docker containerization
-
 ## 📚 Documentation
 
 - [Backend API](./server/README.md) - Detailed API documentation
 - [Frontend](./client/README.md) - Frontend component documentation
 
-## 🐛 Troubleshooting
-
-### Backend won't start
-- Check MongoDB connection string
-- Ensure port 8000 is available
-- Check console for error messages
-
-### Frontend can't connect to API
-- Verify backend is running on port 8000
-- Check CORS settings in `server/src/app.js`
-- Verify API_URL in `client/src/hooks/requests.js`
 
 ---
 
